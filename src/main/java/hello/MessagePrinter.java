@@ -1,5 +1,6 @@
 package hello;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Component
-@Slf4J
+@Slf4j
 public class MessagePrinter
 //	implements ApplicationContextAware, BeanNameAware, InitializingBean,
 //	BeanFactoryAware, DisposableBean
@@ -35,7 +36,7 @@ public class MessagePrinter
 	public void printMessage() {
 		System.out.println("MessagePrinter.printMessage");
 		System.out.println(this.service.getMessage());
-		log.warn();
+		log.warn("Warn....");
 	}
 
 	@PostConstruct
